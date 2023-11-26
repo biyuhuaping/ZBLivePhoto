@@ -74,7 +74,10 @@ static ZBLivePhotoTool *tool = nil;
         dispatch_async(dispatch_get_main_queue(), ^{
            AVAssetTrack *track = [asset tracksWithMediaType:AVMediaTypeVideo].firstObject;
             [PHLivePhoto requestLivePhotoWithResourceFileURLs:@[[NSURL fileURLWithPath:newVideoPath],[NSURL fileURLWithPath:imgPath]] placeholderImage:nil targetSize:track.naturalSize contentMode:PHImageContentModeAspectFit resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
-                handle(livePhoto);
+//                确保 handle 方法只对最终结果回调，而不是对每个中间状态都回调，确定是否已经得到了完整的 livePhoto 对象。这样可以避免在收到低质量（或“降级”）的 livePhoto 时执行 handle 函数。
+                if ([info[PHLivePhotoInfoIsDegradedKey] boolValue] == NO) {
+                    handle(livePhoto);
+                }
             }];
         });
     });

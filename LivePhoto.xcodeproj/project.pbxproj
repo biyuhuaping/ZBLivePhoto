@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3906F7A12B0A092A00F7BB9F /* 111.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 3906F7A02B0A092A00F7BB9F /* 111.MOV */; };
 		3906F7AD2B0A65CF00F7BB9F /* ZBLivePhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3906F7AC2B0A65CF00F7BB9F /* ZBLivePhotoTool.m */; };
+		39A8B66A2B13BAE600ECAB3B /* UIImage+HEIC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8B6692B13BAE600ECAB3B /* UIImage+HEIC.m */; };
 		EF5229942091A07C000BBDBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5229932091A07C000BBDBD /* AppDelegate.m */; };
 		EF5229972091A07C000BBDBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5229962091A07C000BBDBD /* ViewController.m */; };
 		EF52299A2091A07C000BBDBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5229982091A07C000BBDBD /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		3906F7A02B0A092A00F7BB9F /* 111.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 111.MOV; sourceTree = "<group>"; };
 		3906F7AB2B0A65CF00F7BB9F /* ZBLivePhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBLivePhotoTool.h; sourceTree = "<group>"; };
 		3906F7AC2B0A65CF00F7BB9F /* ZBLivePhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBLivePhotoTool.m; sourceTree = "<group>"; };
+		39A8B6692B13BAE600ECAB3B /* UIImage+HEIC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HEIC.m"; sourceTree = "<group>"; };
+		39A8B66B2B13BAED00ECAB3B /* UIImage+HEIC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+HEIC.h"; sourceTree = "<group>"; };
 		EF52298F2091A07C000BBDBD /* LivePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5229922091A07C000BBDBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF5229932091A07C000BBDBD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				EF5229962091A07C000BBDBD /* ViewController.m */,
 				3906F7AB2B0A65CF00F7BB9F /* ZBLivePhotoTool.h */,
 				3906F7AC2B0A65CF00F7BB9F /* ZBLivePhotoTool.m */,
+				39A8B66B2B13BAED00ECAB3B /* UIImage+HEIC.h */,
+				39A8B6692B13BAE600ECAB3B /* UIImage+HEIC.m */,
 				EF5229982091A07C000BBDBD /* Main.storyboard */,
 				EF52299B2091A07D000BBDBD /* Assets.xcassets */,
 				EF52299D2091A07D000BBDBD /* LaunchScreen.storyboard */,
@@ -156,6 +161,7 @@
 			files = (
 				EF5229972091A07C000BBDBD /* ViewController.m in Sources */,
 				EF5229A22091A07D000BBDBD /* main.m in Sources */,
+				39A8B66A2B13BAE600ECAB3B /* UIImage+HEIC.m in Sources */,
 				EF5229942091A07C000BBDBD /* AppDelegate.m in Sources */,
 				3906F7AD2B0A65CF00F7BB9F /* ZBLivePhotoTool.m in Sources */,
 			);

@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ZBLivePhotoTool.h"
+#import "UIImage+HEIC.h"
 
 @interface ViewController ()
 
@@ -33,7 +34,7 @@
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn2.frame = CGRectMake(100, 120, 140, 50);
     btn2.titleLabel.font = [UIFont systemFontOfSize:16];
-    [btn2 setTitle:@"保存livePhoto到相" forState:UIControlStateNormal];
+    [btn2 setTitle:@"UIImage+HEIC" forState:UIControlStateNormal];
     [btn2 setTitleColor:UIColor.redColor forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(saveAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
@@ -63,13 +64,30 @@
 }
 
 - (void)saveAction{
-   
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://lorempixel.com/500/500/"]]];
+    {
+        NSData *highQualityJPEGData = UIImageJPEGRepresentation(image, 1.0);
+        NSData *highQualityHEICData = tj_UIImageHEICRepresentation(image, 1.0);
+        NSUInteger highQualityJPEGDataLength = highQualityJPEGData.length;
+        NSUInteger highQualityHEICDataLength = highQualityHEICData.length;
+        
+        NSLog(@"At 100%% quality:");
+        NSLog(@"JPEG: %lu bytes", (unsigned long)highQualityJPEGDataLength);
+        NSLog(@"HEIC: %lu bytes", (unsigned long)highQualityHEICDataLength);
+        NSLog(@"HEIC is %0.2f%% the size of JPEG", 100.0 * (double)highQualityHEICDataLength / (double)highQualityJPEGDataLength);
+    }
+    
+    {
+        NSData *lowQualityJPEGData = UIImageJPEGRepresentation(image, 0.5);
+        NSData *lowQualityHEICData = tj_UIImageHEICRepresentation(image, 0.5);
+        NSUInteger lowQualityJPEGDataLength = lowQualityJPEGData.length;
+        NSUInteger lowQualityHEICDataLength = lowQualityHEICData.length;
+        
+        NSLog(@"At 50%% quality:");
+        NSLog(@"JPEG: %lu bytes", (unsigned long)lowQualityJPEGDataLength);
+        NSLog(@"HEIC: %lu bytes", (unsigned long)lowQualityHEICDataLength);
+        NSLog(@"HEIC is %0.2f%% the size of JPEG", 100.0 * (double)lowQualityHEICDataLength / (double)lowQualityJPEGDataLength);
+    }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
